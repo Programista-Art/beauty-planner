@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>>Nowa Placówka</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<h2>Dodaj nową placówkę</h2>
+<div class="main-content">
+    <div class="summary">
+        <a class="btn-back" href="/facilities">Wszystkie placówki</a>
+    </div>
+</div>
+    <div class="add-post">
+    <form class="main-post-content" th:action="@{/facilities/new}" th:object="${facility}" method="post">
+        <label for="nameFacilities" class="post-label">Nazwa:</label>
+        <input type="text" id="nameFacilities" th:field="*{nameFacilities}"  class="post-title" required/>
+
+        <label for="adresFacilities"class="post-label">Adres:</label>
+        <input type="text" id="adresFacilities" th:field="*{adresFacilities}" class="post-title" required/>
+
+        <label for="phoneFacilities"class="post-label">Telefon:</label>
+        <input type="text" id="phoneFacilities" th:field="*{phoneFacilities}" class="post-title" required/>
+
+        <label for="email" class="post-label" required>Email:</label>
+        <input type="text" id="email" th:field="*{email}" class="post-title" required/>
+
+        <button type="submit" class="btn-reservation" >Dodaj</button>
+    </form>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

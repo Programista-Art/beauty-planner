@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<title>Szczegóły wizyty</title>
+    <div class="main-content">
+    <div class="summary">
+        <h1>Szczegóły wizyty</h1>
+        <p>ID: <span th:text="${visit.id}"></span></p>
+        <p>ID: <span th:text="${visit.userId}"></span></p>
+        <p>ID: <span th:text="${visit.facilityId}"></span></p>
+        <p>ID: <span th:text="${visit.serviceId}"></span></p>
+        <p>Status: <span th:text="${visit.status}"></span></p>
+        <a href="/visits" class="btn-back">Wstecz</a>
+        <form th:action="@{/visits/{id}/delete(id=${visit.id})}" method="post">
+            <button type="submit" class="btn-delete">Usuń wizytę</button>
+        </form>
+    </div>
+    </div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<h2>Wizyty</h2>
+<div class="main-content">
+    <div class="summary">
+       <a class="post-read-btn" href="/visits/new">Nowa wizyta</a>
+    </div>
+</div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Użytkownik ID</th>
+                <th>Placówka ID</th>
+                <th>Data wizyty</th>
+                <th>Status</th>
+                <th>Akcje</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="visit : ${visits}">
+                <td th:text="${visit.id}"></td>
+                <td th:text="${visit.userId}"></td>
+                <td th:text="${visit.facilityId}"></td>
+                <td th:text="${visit.dateAndTimeOfVisit}"></td>
+                <td th:text="${visit.status}"></td>
+                <td>
+                    <form th:action="@{/visits/{id}/edit(id=${visit.id})}" method="post">
+<!--                        <label for="status">Status:</label>-->
+                        <select id="status" name="status">
+                            <option value="Przyjeta">Przyjęta</option>
+                            <option value="Oplacona">Opłacona</option>
+                            <option value="Oczekuje">Oczekuje</option>
+                            <option value="Wykonana">Wykonana</option>
+                            <option value="Anulowana">Anulowana</option>
+                        </select>
+                        <button type="submit" class="post-read-btn">Zmień status</button>
+                    </form>
+                    <form th:action="@{/visits/{id}/delete(id=${visit.id})}" method="post" style="margin-top: 10px;" >
+                        <button type="submit"class="btn-delete ">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

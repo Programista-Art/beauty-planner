@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+        <div class="main-post-content">
+           <h2>Zaloguj się</h2>
+            <form th:action="@{/login}" method="post">
+                <div>
+                    <label for="username">Email:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Zaloguj</button>
+                </div>
+            </form>
+        </div>
+        </div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

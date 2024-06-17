@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Beauty Planner"/>
+    <!-- <title th:text="${title}"/> -->
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<title>Placówki</title>
+<!--<div class="form-container">-->
+<!--    <div class="form-box">-->
+<h2>Lista placówek</h2>
+<div class="main-content">
+    <div class="summary">
+        <a class="post-read-btn" href="/facilities/new">Nowa Placówka</a>
+    </div>
+</div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa salonu</th>
+                <th>Adres</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="facility : ${facilities}">
+                <td th:text="${facility.id}">1</td>
+                <td th:text="${facility.nameFacilities}">Nazwa salonu</td>
+                <td th:text="${facility.adresFacilities}">Adres</td>
+                <td th:text="${facility.phoneFacilities}">Telefon</td>
+                <td th:text="${facility.email}">Email</td>
+                <td>
+                    <a th:href="@{/facilities/delete/{id}(id=${facility.id})}" class="btn-delete">Usuń</a>
+<!--                    <form  id="delete-form-${customer.id}" th:action="@{/customers/delete/{id}(id=${customer.id})}" method="post">-->
+<!--                        <button  class="btn-delete-customer" type="submit">Usuń</button>-->
+<!--                    </form>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

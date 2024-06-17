@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class ="container mt-5">
+    <h1 th:text="${title}"/>
+</div>
+<h2>Dodaj klienta</h2>
+<div class="form-container">
+    <div class="form-box">
+<!--    <div class="add-post">-->
+        <form th:action="@{/customers/add}" th:object="${customer}" method="post">
+            <label for="firstName" class="post-label">Imię:</label>
+            <input type="text" id="firstName" th:field="*{firstName}"  class="post-title" required/>
+
+            <label for="lastName"class="post-label">Nazwisko:</label>
+            <input type="text" id="lastName" th:field="*{lastName}"  class="post-title" required/>
+
+            <label for="email"class="post-label">Email:</label>
+            <input type="email" id="email" th:field="*{email}"  class="post-title" required/>
+<!--            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></div>-->
+            <!--Walidacja e-mail sprawdza czy jest znak @-->
+            <div id="email-error" class="error-message"></div>
+
+            <script th:inline="javascript">
+                document.getElementById('email').addEventListener('input', function() {
+                    var email = this.value.trim();
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    var isValid = emailRegex.test(email);
+
+                    var errorElement = document.getElementById('email-error');
+                    if (isValid) {
+                        errorElement.textContent = '';
+                    } else {
+                        errorElement.textContent = 'Niepoprawny adres email.';
+                    }
+                });
+            </script>
+            <!--koniec kodu-->
+
+            <label for="password"class="post-label">Hasło:</label>
+            <input type="password" id="password" th:field="*{password}" class="post-title" required/>
+
+            <label for="phone" class="post-label">Telefon:</label>
+            <input type="text" id="phone" th:field="*{phone}" class="post-title" required/>
+
+            <label for="role" class="post-label">Rola:</label>
+<!--            <input type="text" id="role" th:field="*{role}" />-->
+            <select id="role" name="role" th:field="*{role}" class="post-choose" required>
+                <option value="ADMIN" th:text="ADMIN" th:selected="${customer.role == 'ADMIN'}"></option>
+                <option value="USER" th:text="USER" th:selected="${customer.role == 'USER'}"></option>
+            </select>
+
+            <button type="submit" class="btn-reservation">Dodaj</button>
+        </form>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+body,html  {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/*Style dla postów na blogu*/
+
+.main-blog-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.main-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-post-content {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.post-text {
+    margin-bottom: 10px;
+}
+
+.post-views {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.main-post-content .btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-read-btn {
+    color: white;
+    /*width:150px;*/
+    width:190px;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF8C00;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.post-read-btn:hover{
+   background-color: #FF4500;
+   color: white;
+}
+
+.post-title {
+    font-size: 24px;
+     margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:5px;
+    margin-right:5px;
+    width: 470px;
+    font-size: 1rem;
+    color: #EB8ECC;
+    background-color: white;
+    padding:0px;
+}
+input.post-title:focus {
+    border: 2px solid #EB8ECC; /* Zmienia kolor i grubość ramki */
+    outline: none; /* Usuwa domyślną ramkę przeglądarki */
+    color: #EB8ECC;
+}
+
+.post-label {
+    font-size: 1.1rem;
+    margin-left: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+    font-weight:bold
+    color: #EB8ECC;
+}
+label{
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    color: #a50394
+}
+
+.add-post{
+    margin-top: 0px;
+    /*font-size: 1.1rem;*/
+    width:auto;
+    color: rgb(195, 0, 255);
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-color: #ffffff;
+    /*border-bottom: solid 1px rgb(195, 0, 255);*/
+    z-index: 2;
+}
+
+textarea{
+  width: 470px;
+  max-width 490px;
+  height: 200px;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 5px;
+}
+
+.btn-add{
+  width: 470px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom:20px;
+  font-size: 1rem;
+  border: 1px solid coral;
+  color: rgb(255, 255, 255);
+  background-color: #ffc107;
+  border-radius: 10px;
+}
+
+.btn-add:hover{
+  border: 1px solid rgb(80, 185, 255);
+  color: rgb(255, 255, 255);
+  background-color:: #FF69B4;
+}
+
+/* Styl dla przycisku "Wróć do listy" */
+.btn-back {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DB7093;
+    color: white;
+    width:190px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.btn-back:hover {
+   background-color: #BA456A;
+   color: white;
+}
+
+.btn-delete{
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #B22222;
+    color: white;
+    width:190px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.btn-delete:hover{
+     background-color: #800000;
+     color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/*Style dla postów na blogu koniec*/
+/*Forma dodawanie klienta */
+.form-box {
+    margin-top:0px;
+    width: 320px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.post-choose{
+    margin-top:0px;
+    width: 320px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.form-box label, .form-box input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-box button {
+    width:100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(127, 27, 221);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+.form-box button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(45, 89, 209);
+}
+
+/* Tabela z klientami */
+h2{
+    margin-top: 240px;
+    text-align: center;
+}
+table{
+    margin-top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-delete-customer{
+    width: 100px;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 5px auto;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+.btn-delete-customer:hover{
+    background-color: #29688d;
+    color: white;
+}
+
+a{
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover {
+    background-color: #29688d;
+    color: white;
+}
+
+/* Styl dla przycisku Rola */
+
+select {
+    width: 500px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+.error-message {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #800080;
+}
+
+/* Styl dla label */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+/*Konec bloku*/
+.form-login{
+  width: 500px;
+  background-color: rgb(195, 0, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  border: solid 1px #000000;
+  border-radius: 10px;
+}
+
+.navbar {
+     font-size:1.1rem;
+     position: fixed;
+     color: white;
+     display: flex;
+     justify-content: center;
+     top: 0;
+     left: 0;
+     padding-top: 130px;
+     width: 100%;
+     background-color: #ffffff;
+     color: white;
+     z-index: 1000;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     margin:0;
+}
+.footer1 {
+     font-size:1.1rem;
+     position: fixed;
+     color: white;
+     display: flex;
+     justify-content: center;
+     bottom: 0;
+     left: 0;
+     padding-bottom: 0px;
+     width: 100%;
+     background-color: #ffffff;
+     z-index: 1000;
+     margin-top:20;
+     margin-bottom:65px;
+     border-top:1px solid rgba(0, 0, 0, 0.1);
+}
+.project-autor{
+    font-size: 1rem;
+    position: fixed;
+    color: black;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    z-index: 1005;
+    margin-bottom:30px;
+}
+.project-data{
+    font-size: 0.9rem;
+    position: fixed;
+    color: black;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: #f8f9fa;
+    width: 100%;
+    text-align: center;
+    z-index: 1005;
+    margin-bottom:0px;
+}
+.nav-item{
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: large;
+   /*  width: 100px;*/
+    width: 110px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+   /* border-left: solid 1px rgb(195, 0, 255);
+    border-right: solid 1px rgb(195, 0, 255);
+    */
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+
+}
+
+.nav-item:hover {
+    background-color: white;
+    color: black;
+   /* border-bottom: 2px solid rgb(195, 0, 255);*/
+    border-bottom: 2px solid #EB8ECC;
+}
+.title{
+     position: fixed;
+     font-size: 2.1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-weight: 900;
+     color: rgb(195, 0, 255);
+     display: flex;
+     justify-content: center;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding-top: 30px;
+     padding-bottom: 30px;
+     background-color: #ffffff;
+     /* border-bottom: solid 1px rgb(195, 0, 255); */
+     z-index: 1000;
+}
+
+
+/*Odpowiada za wygląd szcegółów posta*/
+.item {
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+ /*
+    border-bottom: solid 5px rgb(214, 102, 199);
+    border-left: solid 1px rgb(214, 102, 199);
+    border-right: solid 1px rgb(214, 102, 199);
+    */
+    /* border-right: solid 1px rgb(75, 75, 75); */
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     border: 1px solid #ccc;
+}
+
+
+.item-name {
+    background-color: #EB8ECC;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:0px;
+    padding-right:0px;
+    font-size: larger;
+    font-weight: bold;
+    /* width: calc(100%-6px); */
+    width: 100%;
+    margin-top: 0;
+}
+
+.item img {
+    width: 70%;
+    height: auto;
+}
+
+/*
+.btn-info {
+    text-decoration: none;
+    background-color: rgb(115, 159, 170);
+    color: white;
+    width: 70%;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-info:hover {
+    background-color: rgb(75, 75, 75);
+    color: white;
+}
+*/
+.add-btn-to-cart:hover {
+    background-color: rgb(75, 75, 75);
+}
+
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    width: 100%;
+}
+
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.726);
+    margin: auto;
+    margin-top: 30px;
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+     z-index: 20;
+}
+
+
+/*Dotyczy okna usługi szcegóły usługi*/
+/* Styl dla głównego kontenera */
+
+.service-content {
+    margin-top:0px;
+    max-width: calc(100vw/2);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFF5F9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom:230px;
+}
+.service-content > h1{
+    margin-top:0px;
+    max-width: calc(100vw/2);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFE3F1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom:10px;
+}
+.service-content > p{
+    margin-top:0px;
+    max-width: calc(100vw/2);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFE3F1;
+    color:black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom:10px;
+}
+.btn-more {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #00A684;
+    color: white;
+    width:190px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.btn-more:hover {
+   background-color: #007152;
+   color: white;
+}
+
+/*Przycisk zarezerwuj teraz*/
+.btn-reservation {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #F85C69;
+    color: white;
+    width:190px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom:20px;
+    margin-top:5px;
+
+}
+
+.btn-reservation:hover {
+   background-color: #DB7093;
+   color: white;
+}
+
+/* Styl dla zdjęcia */
+.img-logo > img{
+     position: fixed;
+      width: 120px;
+      height:auto;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+
+
+     padding: 0px;
+     background-color: transparent; /* Usunięcie tła */
+     border: none; /* Usunięcie ramki */
+     z-index: 1030; /* Aby logo było nad innymi elementami */
+     border-top:0px;
+     border-bottom:100px;
+}
+
+img {
+    /*max-width: calc(100vw/5);*/
+    max-width: calc(100vw/2);
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:50px;
+}
+
+.blog-content {
+    margin-top:20px;
+    max-width: calc(100vw/2);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content  h2 {
+    margin-top:20px;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main-post-content {
+   margin: 20px auto;
+    max-width: calc(100vw / 2);
+    padding: 0; /* Usuwamy padding */
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Dostosowanie cienia */
+}
+
+.main-post-content > h1 {
+    color: #FF1493;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    border-bottom: 2px solid #FF69B4;
+}
+
+/* Styl dla nagłówka */
+h1 {
+    margin-top:200px;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Styl dla opisu */
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Styl dla sekcji informacji */
+div {
+    margin-bottom: 10px;
+}
+
+.post-label{
+    margin:5px;
+    font-size:1.1rem;
+    color:
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Styl dla cen i czasu trwania */
+span {
+    margin-right: 5px;
+}
+
+
+
+

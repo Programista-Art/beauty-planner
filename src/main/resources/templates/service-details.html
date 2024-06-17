@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Szczegóły Usługi</title>
+  <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+  <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<h2>Szczegóły usługi</h2>
+<div class="main-content">
+  <div class="summary">
+    <a href="/services" class="btn-back">Wróć do Usług</a>
+  </div>
+</div>
+  <div class="service-content">
+    <h1 th:text="${service.name}">Nazwa usługi</h1>
+    <p th:text="${service.description}">Opis usługi</p>
+    <div>
+      <span>Cena: </span>
+      <span th:text="${service.price}">Cena</span>
+      <span>zł</span>
+    </div>
+    <div>
+      <span>Czas trwania: </span>
+      <span th:text="${service.minuteDuration}">Czas trwania</span>
+      <span>min</span>
+    </div>
+    <img th:src="@{${service.imagePath}}" alt="Zdjęcie usługi">
+  </div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

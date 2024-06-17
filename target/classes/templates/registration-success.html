@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+    <div class="registr-content">
+        <div class="summary">
+           
+           <form th:action="@{/admin}" method="post" >
+              <h3>Rejestracja</h3> 
+              <label>Imię</label>
+              <input type="text" name="name" required>
+              <label>Nazwisko</label>
+              <input type="text" name="surname" required>
+              <label>Kod pocztowy</label>
+              <input type="number" name="zipcode" required>
+              <label>Miejscowość</label>
+              <input type="text" name="city">
+              <label>Kraj</label>
+              <input type="text" name="country">
+              <label>Województwo:</label>
+              <select>
+                <option>Dolnośląskie</option>
+                <option>Kujawsko-pomorskie</option>
+                <option>Lubelskie</option>
+                <option>Lubuskie</option>
+                <option>Łódzkie,</option>
+                <option>Małopolskie</option>
+                <option>Mazowieckie</option>
+                <option>Opolskie</option>
+                <option>Podkarpackie</option>
+                <option>Podlaskie</option>
+                <option>Pomorskie</option>
+                <option>Śląskie</option>
+                <option>Świętokrzyskie</option>
+                <option>Warmińsko-mazurskie</option>
+                <option>Zachodniopomorskie</option>
+              </select>
+              <label>Numer telefonu</label>
+              <input type="number" name="phone" required>
+              <br>
+              <button type="submit" class="registration-btn">Utwórz konto</button>
+           </form>
+        </div>
+    </div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

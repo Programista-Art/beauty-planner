@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<span class="title">Dane użytkownika</span>
+
+<div class="main-post-content">
+    <h2>Nowa wizyta</h2>
+    <form th:action="@{/visits/new}" th:object="${visit}" method="post">
+        <label for="service">Usługa:</label>
+        <select id="service" th:field="*{serviceId}">
+            <option th:each="service : ${services}" th:value="${service.id}" th:text="${service.nazwa}"></option>
+        </select>
+
+        <label for="facility">Placówka:</label>
+        <select id="facility" th:field="*{facilityId}">
+            <option th:each="facility : ${facilities}" th:value="${facility.id}" th:text="${facility.name}"></option>
+        </select>
+
+        <label for="date_and_time_of_visit">Data i godzina wizyty:</label>
+        <input type="datetime-local" id="date_and_time_of_visit" th:field="*{dateAndTimeOfVisit}"/>
+
+        <button type="submit">Zarezerwuj</button>
+    </form>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

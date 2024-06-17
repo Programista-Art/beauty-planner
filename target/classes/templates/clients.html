@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<h2>Klienci</h2>
+<div class ="container mt-5">
+    <h1 th:text="${title}"/>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
