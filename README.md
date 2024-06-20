@@ -31,6 +31,18 @@
 - Z tabeli services usunąłem klucz obcy dotyczący wizyt
 
 - Użyj skryptu `ALTER TABLE beautyplanner.services DROP FOREIGN KEY wizyty;`
+- Z tabeli facilities usunąłem klucze obcy dotyczący id usługi, id użytkownika, id wizyty
+
+  `CONSTRAINT `pla` FOREIGN KEY (`id`) REFERENCES `services` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE,
+  `CONSTRAINT `uz` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE,
+  `CONSTRAINT `wizy` FOREIGN KEY (`id`) REFERENCES `visits` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE`
+
+- Użyj skryptu aby usunąć klucze obce z tabeli facilities (placówki)
+
+   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY pla;`
+   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY uz;`
+   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY wizy;`
+
 
 ### Pliki dla testów
 
