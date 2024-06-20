@@ -1,6 +1,7 @@
 package com.BeautyPlanner.BeautyPlanner.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.processing.Pattern;
 
 @Entity
 @Table(name = "services")

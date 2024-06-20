@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nową usługę</title>
+    <!--    <link rel="stylesheet" type=text/css href="../static/style.css">-->
+    <link rel="stylesheet" type=text/css href="/style.css">
+
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<h2>Dodaj nową usługę</h2>
+<div class="add-post">
+    <form class="main-post-content" th:action="@{/services/new}" th:object="${service}" method="post">
+        <label class="post-label">Nazwa:</label>
+        <input type="text" th:field="*{name}" maxlength="255"class="post-title" required/><br/>
+
+        <label class="post-label">Opis:</label>
+        <textarea th:field="*{description}" maxlength="500"></textarea><br/>
+
+        <label class="post-label"> Czas trwania (w minutach):</label>
+        <input type="number" th:field="*{minuteDuration}" class="post-title" required/><br/>
+
+        <label class="post-label">Cena:</label>
+        <input type="number" step="0.01" th:field="*{price}" class="post-title" required/><br/>
+
+        <label class="post-label">Ścieżka do zdjęcia (imgur.com):</label>
+        <input type="text" th:field="*{imagePath}" maxlength="255"class="post-title" required/><br/>
+        <input type="submit" value="Dodaj" class="btn-reservation"/>
+    </form>
+</div>
+
+<div class="main-content">
+        <a class="btn-back" href="/services">Wszystkie usługi</a>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+
+</body>
+</html>

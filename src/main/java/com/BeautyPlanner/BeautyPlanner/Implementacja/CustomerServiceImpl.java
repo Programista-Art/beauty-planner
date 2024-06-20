@@ -4,9 +4,6 @@ import com.BeautyPlanner.BeautyPlanner.Servicess.CustomerService;
 import com.BeautyPlanner.BeautyPlanner.models.Customer;
 import com.BeautyPlanner.BeautyPlanner.repo.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
