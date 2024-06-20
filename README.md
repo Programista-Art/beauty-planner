@@ -51,7 +51,11 @@ Interfejs
 
 # Panel Usługi
 
-![Widok usługi](/img/widok-home.jpg)
+![Widok usługi](/img/widok-uslugi.jpg)
+
+# Formularz dodawania Usługi
+
+![Widok usługi](/img/dodanie-uslugi.jpg)
 
 # Panel Placówki Opis usługi
 
