@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -12,36 +13,63 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-
-
-<div class="service-content">
-    <h1 th:text="'Witaj w '+ ${title} + '!'"></h1>
-    <!--                       <p th:text="'Witaj, '+ ${title} + '!'"/>-->
-    <p>Narzędzie do rezerwacji wizyt w salonie kosmetycznym</p>
-    <p>
-        <a href="/login" class="btn btn-primary my-2">Zaloguj się</a>
-        <a href="/customers" class="btn btn-secondary my-2">Załóż konto</a>
-    </p>
-</div>
-<div class="main-content">
-    <div th:each="service : ${services}" class="item">
-        <p class="item-name" th:text="${service.name}"></p>
-        <img th:src="@{${service.imagePath}}" alt="Zdjęcie usługi">
-        <div>
-            <span>Cena:</span>
-            <span th:text="${service.price}"></span>
-            <span>zł</span>
+<div class="main-content-home">
+    <section id="about">
+        <h2>System Rezerwacji Wizyt:</h2>
+        <div class="section-content">
+            <p>Aplikacja do rezerwacji wizyt dla salonów kosmetycznych.</p>
+            <ol>
+                <li>Tworzenie profili użytkowników (Rejstracja).</li>
+                <li>Logowanie.</li>
+                <li>Przeglądanie dostępnych usług i terminów.</li>
+                <li>Rezerwowanie i anulowanie wizyt.</li>
+                <li>Przypomnienia SMS.</li>
+                <li>Kalendarz.</li>
+                <li>Powiadomienia SMS, email.</li>
+                <li>Drukowanie i eksport danych.</li>
+                <li>Statystyki.</li>
+            </ol>
         </div>
-        <div>
-            <span>Czas trwania:</span>
-            <span th:text="${service.minuteDuration}"></span>
-            <span>min</span>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <h2>Nasze usługi</h2>
         </div>
-        <!--        <a href="" class="btn-info">Więcej</a>-->
-        <a th:href="@{/services/details/{id}(id=${service.id})}" class="btn-info">Więcej</a>
-        <a href="" class="add-btn-to-cart">Zarezerwuj teraz</a>
-    </div>
+        <div class="section-content">
+            <div class="service">
+                <img src="/img/reserwacja.png" alt="Usługa 1">
+                <h3>Rezerwacje salonów z wielu źródeł</h3>
+                <p>Nasz system rezerwacji dla salonów kosmetycznych można zintegrować z dowolną stroną internetową.</p>
+            </div>
+
+            <div class="service">
+                <img src="/img/website.png" alt="Usługa 2">
+                <h3>Dedykowana strona internetowa dla salonu kosmetycznego</h3>
+                <p>Strona internetowa wyróżni Twój salon w sieci, przyciągnie więcej klientów i ułatwi im rezerwację zabiegów kosmetycznych. </p>
+            </div>
+            <div class="service">
+                <img src="/img/powiadomienia.png" alt="Usługa 3">
+                <h3>Powiadomienia SMS i e-mail</h3>
+                <p>Beauty Planner informuje Twoich klientów i minimalizuje brakujące rezerwacje. Nasz system przypomina klientom o
+                    zarezerwowanych zabiegach kosmetycznych przed i po wizycie. Pierwsza metoda pozwala zmniejszyć prawdopodobieństwo,
+                    że klient zapomni o umówionej wizycie, a druga pomaga zachęcić klientów do ponownej rezerwacji usług. .</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <h2>Kontakt</h2>
+        </div>
+        <div class="section-content">
+            <p>Telefon: 123-456-789</p>
+            <p>Email: info@beautyplanner.com</p>
+            <p>Adres: ul. Przykładowa 1, 00-000 Warszawa</p>
+        </div>
+    </section>
 </div>
+
 
 <div th:insert="blocks/footer :: footer"></div>
 </body>

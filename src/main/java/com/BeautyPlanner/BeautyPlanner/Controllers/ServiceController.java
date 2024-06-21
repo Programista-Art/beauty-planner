@@ -52,6 +52,8 @@ public String deleteService(@PathVariable("id") Long id) {
         serviceRepository.delete(service.get());
     }
     return "redirect:/services";
+
+
 }
 }
 
