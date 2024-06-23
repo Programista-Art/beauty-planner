@@ -26,23 +26,36 @@
 
 1. Nazwa bazy danych beautyplanner
 1. Model bazy danych dla MySQL Workbench [link](/baza/beautyplanner-eng1.mwb)
-1. SQL bazy danych dla MySQL Workbench [link](/baza/beautyplanner-eng.sql)
+1. SQL bazy danych dla MySQL Workbench [link](/baza/baza.sql.sql)
+- Otwórz bazę danych w MySQL WorkBench
+- wpisz connection name beautyplanner username root hasło można nie wpisywać będzie hasło od użytkownika root które ustawiłeś podczas instalacji MySQL
+- Z tabeli services usunąłem klucz obcy dotyczący wizyt utwórz połączenie z bazą danych.
 
-- Z tabeli services usunąłem klucz obcy dotyczący wizyt
+- Zaloguj się do bazy, w eskportu sql zapytania kliknij 
+- File > Open SQL Script wybierz bazę danych baza.sql kliknij znaczek pioruna.
 
-- Użyj skryptu `ALTER TABLE beautyplanner.services DROP FOREIGN KEY wizyty;`
+![Widok usługi](/baza/sql.jpg)
+Podłacz
+
+## Informacyjnie
+
+```sql
+ALTER TABLE beautyplanner.services DROP FOREIGN KEY wizyty;
+```
 - Z tabeli facilities usunąłem klucze obcy dotyczący id usługi, id użytkownika, id wizyty
 
-  `CONSTRAINT `pla` FOREIGN KEY (`id`) REFERENCES `services` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE,
-  `CONSTRAINT `uz` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE,
-  `CONSTRAINT `wizy` FOREIGN KEY (`id`) REFERENCES `visits` (`id`) ON `DELETE CASCADE ON UPDATE CASCADE`
+  ```sql
+  CONSTRAINT `pla` FOREIGN KEY (`id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `uz` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `wizy` FOREIGN KEY (`id`) REFERENCES `visits` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  ```
 
 - Użyj skryptu aby usunąć klucze obce z tabeli facilities (placówki)
-
-   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY pla;`
-   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY uz;`
-   - `ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY wizy;`
-
+ ```sql
+    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY pla;
+    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY uz;
+    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY wizy;
+ ```
 
 ### Pliki dla testów
 
