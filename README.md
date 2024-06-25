@@ -26,12 +26,13 @@
 
 1. Nazwa bazy danych beautyplanner
 1. Model bazy danych dla MySQL Workbench [link](/baza/beautyplanner-eng1.mwb)
-1. SQL bazy danych dla MySQL Workbench [link](/baza/baza.sql.sql)
+1. Baza danych dla MySQL Workbench [link](/baza/baza.sql)
+
 - Otwórz bazę danych w MySQL WorkBench
-- wpisz connection name beautyplanner username root hasło można nie wpisywać będzie hasło od użytkownika root które ustawiłeś podczas instalacji MySQL
+- Wpisz w connection name beautyplanner, username root, hasło można nie wpisywać będzie hasło od użytkownika root które ustawiłeś podczas instalacji MySQL
 - Z tabeli services usunąłem klucz obcy dotyczący wizyt utwórz połączenie z bazą danych.
 
-- Zaloguj się do bazy, w eskportu sql zapytania kliknij 
+- Zaloguj się do bazy, w eskportu sql zapytania kliknij
 - File > Open SQL Script wybierz bazę danych baza.sql kliknij znaczek pioruna.
 
 ![Widok usługi](/baza/sql.jpg)
@@ -42,6 +43,7 @@ Podłacz
 ```sql
 ALTER TABLE beautyplanner.services DROP FOREIGN KEY wizyty;
 ```
+
 - Z tabeli facilities usunąłem klucze obcy dotyczący id usługi, id użytkownika, id wizyty
 
   ```sql
@@ -51,11 +53,12 @@ ALTER TABLE beautyplanner.services DROP FOREIGN KEY wizyty;
   ```
 
 - Użyj skryptu aby usunąć klucze obce z tabeli facilities (placówki)
- ```sql
-    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY pla;
-    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY uz;
-    ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY wizy;
- ```
+
+```sql
+   ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY pla;
+   ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY uz;
+   ALTER TABLE  beautyplanner.facilities DROP FOREIGN KEY wizy;
+```
 
 ### Pliki dla testów
 
