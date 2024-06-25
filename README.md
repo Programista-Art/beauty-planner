@@ -36,7 +36,6 @@
 - File > Open SQL Script wybierz bazę danych baza.sql kliknij znaczek pioruna.
 
 ![Widok usługi](/baza/sql.jpg)
-Podłacz
 
 ## Informacyjnie
 
